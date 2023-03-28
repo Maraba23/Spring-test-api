@@ -23,7 +23,7 @@ public class ChaveService {
     }
 
     public List<Chave> getMsgs(String user) {
-        User u = userService.getUser(user);
+        User u = userService.findByIdentifier(user);
         return msgRepository.findByUser(u);
     }
 
@@ -32,6 +32,8 @@ public class ChaveService {
     }
 
     public Chave salvarMsg(Chave msg) {
+        User u = userService.findByIdentifier(msg.getUser().getIdentifier());
+        msg.setUser(u);
         msg.setIdentifier(UUID.randomUUID().toString());
         return msgRepository.save(msg);
     }

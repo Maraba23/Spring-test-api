@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/mensagem")
+@RequestMapping("/chave")
 public class ChaveController {
 
     @Autowired
@@ -35,6 +35,4 @@ public class ChaveController {
     public Chave salvarMsg(@RequestBody @Valid Chave msg) {
         return msgService.salvarMsg(msg);
     }
-
-
 }

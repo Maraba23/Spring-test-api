@@ -14,7 +14,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Entity
-public abstract class Chave {
+public class Chave {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
